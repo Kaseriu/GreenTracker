@@ -16,4 +16,12 @@ public class Ticket {
         this.id_user = id_user;
         this.id_state = id_state;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId_state() {
+        return id_state;
+    }
 }
