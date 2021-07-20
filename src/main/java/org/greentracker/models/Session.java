@@ -1,13 +1,25 @@
 package org.greentracker.models;
 
 public class Session {
-    private int sessionId;
-    private String token;
-    private int userId;
+    private final int sessionId;
+    private final String token;
+    private final int userId;
 
     public Session(int sessionId, String token, int userId) {
         this.sessionId = sessionId;
         this.token = token;
         this.userId = userId;
+    }
+
+    public int getSessionId() {
+        return sessionId;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 }

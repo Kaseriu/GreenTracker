@@ -1,4 +1,4 @@
-package org.greentracker.builder;
+package org.greentracker.builders;
 
 import com.inamik.text.tables.GridTable;
 import com.inamik.text.tables.SimpleTable;
@@ -6,7 +6,6 @@ import com.inamik.text.tables.grid.Border;
 import com.inamik.text.tables.grid.Util;
 import org.greentracker.models.State;
 import org.greentracker.models.Ticket;
-import org.greentracker.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +14,10 @@ import java.util.stream.Collectors;
 import static com.inamik.text.tables.Cell.Functions.HORIZONTAL_CENTER;
 
 public class AsciiTableBuilder {
-    private User user;
     private final List<Ticket> ticketList;
     private final List<State> stateList;
 
-    public AsciiTableBuilder(User user, List<Ticket> ticketList, List<State> stateList) {
-        this.user = user;
+    public AsciiTableBuilder(List<Ticket> ticketList, List<State> stateList) {
         this.ticketList = ticketList;
         this.stateList = stateList;
     }
@@ -35,8 +32,6 @@ public class AsciiTableBuilder {
             maxTicketsSize = Math.max(sortedTicket.length, maxTicketsSize);
         }
 
-        System.out.println(stateList.size());
-
         table.nextRow();
 
         for (State state : stateList) {
@@ -47,22 +42,20 @@ public class AsciiTableBuilder {
 
         for (int i = 0; i < maxTicketsSize; i++) {
             table.nextRow();
-            if (i < sortedTickets.size()) {
-                for (String[] sortedTicket : sortedTickets) {
-                    if (i < sortedTicket.length) {
-                        table.nextCell().addLine(sortedTicket[i]
-                                .replace("[", "")
-                                .replace("]", ""))
-                                .applyToCell(HORIZONTAL_CENTER.withWidth(width));
-                    } else {
-                        table.nextCell();
-                    }
+            for (String[] sortedTicket : sortedTickets) {
+                if (i < sortedTicket.length) {
+                    table.nextCell().addLine(sortedTicket[i]
+                            .replace("[", "")
+                            .replace("]", ""))
+                            .applyToCell(HORIZONTAL_CENTER.withWidth(width));
+                } else {
+                    table.nextCell();
                 }
             }
         }
 
         GridTable gridTable = table.toGrid();
-        gridTable= Border.of(Border.Chars.of('+', '-', '|')).apply(gridTable);
+        gridTable = Border.of(Border.Chars.of('+', '-', '|')).apply(gridTable);
 
         Util.print(gridTable);
     }
@@ -80,10 +73,10 @@ public class AsciiTableBuilder {
 
     private int longestStringInArray(List<String[]> array) {
         int elementLength = array.get(0)[0].length();
-        for(int i = 1; i < array.size(); i++) {
+        for (int i = 1; i < array.size(); i++) {
             for (String[] arr : array) {
                 if (i < arr.length) {
-                    if(arr[i].length() > elementLength) {
+                    if (arr[i].length() > elementLength) {
                         elementLength = arr[i].length();
                     }
                 }
