@@ -81,7 +81,7 @@ public class StateRequest {
             in.close();
 
             ObjectMapper mapper = new ObjectMapper();
-            Map<String,Object> map = mapper.readValue(response.toString(), Map.class);
+            Map<String, Object> map = mapper.readValue(response.toString(), Map.class);
 
             return map.get("name").toString();
         } else {

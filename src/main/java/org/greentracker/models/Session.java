@@ -11,10 +11,6 @@ public class Session {
         this.userId = userId;
     }
 
-    public int getSessionId() {
-        return sessionId;
-    }
-
     public String getToken() {
         return token;
     }

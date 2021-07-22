@@ -8,7 +8,6 @@ import org.greentracker.models.User;
 import org.greentracker.requests.SessionRequest;
 import org.greentracker.requests.StateRequest;
 import org.greentracker.requests.TicketRequest;
-import org.greentracker.requests.UserRequest;
 
 import java.util.Scanner;
 

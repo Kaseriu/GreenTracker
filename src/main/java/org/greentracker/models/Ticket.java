@@ -20,24 +20,8 @@ public class Ticket {
         this.id_state = id_state;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getAssignee() {
-        return assignee;
-    }
-
-    public int getId_user() {
-        return id_user;
     }
 
     public int getId_state() {

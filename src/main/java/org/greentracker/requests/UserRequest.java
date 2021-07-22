@@ -1,9 +1,7 @@
 package org.greentracker.requests;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.greentracker.models.Session;
-import org.greentracker.models.User;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -60,7 +58,7 @@ public class UserRequest {
             in.close();
 
             ObjectMapper mapper = new ObjectMapper();
-            Map<String,Object> map = mapper.readValue(response.toString(), Map.class);
+            Map<String, Object> map = mapper.readValue(response.toString(), Map.class);
 
             return map.get("name").toString();
         } else {
