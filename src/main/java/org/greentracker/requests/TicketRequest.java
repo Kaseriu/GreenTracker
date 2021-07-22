@@ -130,10 +130,10 @@ public class TicketRequest {
             jsonObject.put("description", ticketInfo[1]);
         }
         if (!ticketInfo[2].isEmpty()) {
-            jsonObject.put("assignee", ticketInfo[2]);
+            jsonObject.put("assigneeName", ticketInfo[2]);
         }
         if (!ticketInfo[3].isEmpty()) {
-            jsonObject.put("id_state", new StateBuilder(StateRequest.getAllStates(session)).getStateList().get(0).getId());
+            jsonObject.put("stateName", ticketInfo[3]);
         }
 
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(connection.getOutputStream());

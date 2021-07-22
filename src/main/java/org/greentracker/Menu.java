@@ -8,6 +8,7 @@ import org.greentracker.models.User;
 import org.greentracker.requests.SessionRequest;
 import org.greentracker.requests.StateRequest;
 import org.greentracker.requests.TicketRequest;
+import org.greentracker.requests.UserRequest;
 
 import java.util.Scanner;
 
@@ -60,7 +61,7 @@ public class Menu {
                     String ticketInfo = TicketRequest.getTicketByName(session, ticketName);
                     if (ticketInfo != null) {
                         TicketBuilder ticketByNameBuilder = new TicketBuilder(ticketInfo);
-                        System.out.println(ticketByNameBuilder.getTicketList().get(0).toString());
+                        System.out.println(ticketByNameBuilder.getTicketList().get(0).toString(session));
                     }
 
                     System.out.print("Appuyer sur entrer pour continuer");

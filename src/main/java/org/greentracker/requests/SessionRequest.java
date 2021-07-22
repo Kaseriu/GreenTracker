@@ -69,7 +69,8 @@ public class SessionRequest {
         outputStreamWriter.close();
 
         StringBuilder sb = new StringBuilder();
-        if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+        if (connection.getResponseCode() == 200) {
+            System.out.println();
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
             String line;
@@ -79,7 +80,14 @@ public class SessionRequest {
             br.close();
             return sb.toString();
         } else {
-            System.out.println(connection.getResponseMessage());
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(connection.getErrorStream(), StandardCharsets.UTF_8));
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            br.close();
+            System.out.print(sb);
             return null;
         }
     }

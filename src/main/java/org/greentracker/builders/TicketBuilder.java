@@ -1,6 +1,7 @@
 package org.greentracker.builders;
 
 import org.greentracker.models.Ticket;
+import org.greentracker.requests.UserRequest;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -36,8 +36,6 @@ public class App {
                         String userInfo = UserRequest.GetUserById(sessionBuilder.getSession());
                         UserBuilder userBuilder = new UserBuilder(userInfo);
                         Menu.menuDisplay(sessionBuilder.getSession(), userBuilder.getUser());
-                    } else {
-                        System.out.println("Mauvais email ou mot de passe");
                     }
                     break;
                 case "2":

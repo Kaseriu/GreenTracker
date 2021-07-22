@@ -1,5 +1,8 @@
 package org.greentracker.models;
 
+import org.greentracker.requests.StateRequest;
+import org.greentracker.requests.UserRequest;
+
 public class Ticket {
     private final int id;
     private final String name;
@@ -41,14 +44,13 @@ public class Ticket {
         return id_state;
     }
 
-    @Override
-    public String toString() {
+    public String toString(Session session) throws Exception {
         return "Informations du Ticket :" +
-                "\nId : " + id +
-                "\nNom : " + name +
-                "\nDescription : " + description +
-                "\nAssigner à : " + assignee +
-                "\nCréer par : " + id_user +
-                "\nEtat actuel : " + id_state;
+                "\nId : " + this.id +
+                "\nNom : " + this.name +
+                "\nDescription : " + this.description +
+                "\nAssigner à : " + UserRequest.GetUserName(session, this.assignee) +
+                "\nCréer par : " + UserRequest.GetUserName(session, this.id_user) +
+                "\nEtat actuel : " + StateRequest.GetStateName(session, this.id_state);
     }
 }
