@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.greentracker.scene.controllers.authControllers.ConnectionController">
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="378.0" layoutY="14.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../logo.png"/>
+    </ImageView>
+    <Text fx:id="emailText" layoutX="463.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="emailTextField" layoutX="405.0" layoutY="202.0"/>
+    <Text fx:id="passwordText" layoutX="438.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Mot de passe">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <PasswordField fx:id="passwordField" layoutX="405.0" layoutY="274.0"/>
+    <Button fx:id="validateButton" layoutX="448.0" layoutY="328.0" mnemonicParsing="false" onAction="#connection"
+            text="Valider">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Text fx:id="errorText" layoutX="384.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Vos identifiants sont incorrects" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <Button fx:id="returnButton" layoutX="449.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMainWindow"
+            text="Retour">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+</AnchorPane>

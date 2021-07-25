@@ -4,8 +4,8 @@ import org.greentracker.builders.AsciiTableBuilder;
 import org.greentracker.builders.StateBuilder;
 import org.greentracker.builders.TicketBuilder;
 import org.greentracker.models.Session;
-import org.greentracker.models.User;
 import org.greentracker.requests.SessionRequest;
+import org.greentracker.models.User;
 import org.greentracker.requests.StateRequest;
 import org.greentracker.requests.TicketRequest;
 

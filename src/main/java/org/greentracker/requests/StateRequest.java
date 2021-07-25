@@ -1,6 +1,7 @@
 package org.greentracker.requests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.greentracker.App;
 import org.greentracker.models.Session;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 
@@ -12,12 +13,10 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-import static org.greentracker.App.API_URI;
-
 public class StateRequest {
     static public String getAllStates(Session session) {
         try {
-            URL url = new URL(API_URI + "java-api/state");
+            URL url = new URL(App.API_URI + "java-api/state");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
             connection.setRequestProperty("Content-Type", "application/json");
@@ -42,7 +41,7 @@ public class StateRequest {
     static public String getStateByName(Session session, String name) {
         try {
             if (!name.isEmpty()) {
-                URL url = new URL(API_URI + "java-api/state/" + name);
+                URL url = new URL(App.API_URI + "java-api/state/" + name);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -73,7 +72,7 @@ public class StateRequest {
 
     static public String GetStateName(Session session, Integer state) {
         try {
-            URL url = new URL(API_URI + "java-api/state/id/" + state);
+            URL url = new URL(App.API_URI + "java-api/state/id/" + state);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -107,7 +106,7 @@ public class StateRequest {
 
     static public void createState(Session session, String stateName) {
         try {
-            URL url = new URL(API_URI + "java-api/state");
+            URL url = new URL(App.API_URI + "java-api/state");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -141,7 +140,7 @@ public class StateRequest {
 
     static public void updateState(Session session, String stateName, String newStateName) {
         try {
-            URL url = new URL(API_URI + "java-api/state/" + stateName);
+            URL url = new URL(App.API_URI + "java-api/state/" + stateName);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -175,9 +174,9 @@ public class StateRequest {
         }
     }
 
-    static public void deleteState(Session session, String name) throws Exception {
+    static public void deleteState(Session session, String name) {
         try {
-            URL url = new URL(API_URI + "java-api/state/" + name);
+            URL url = new URL(App.API_URI + "java-api/state/" + name);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());

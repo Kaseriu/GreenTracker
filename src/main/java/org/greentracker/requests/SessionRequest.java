@@ -1,5 +1,6 @@
 package org.greentracker.requests;
 
+import org.greentracker.App;
 import org.greentracker.models.Session;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 
@@ -10,13 +11,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-import static org.greentracker.App.API_URI;
-
 public class SessionRequest {
 
     static public String UserSubscription(String[] userInfo) {
         try {
-            URL url = new URL(API_URI + "java-api/auth/subscribe");
+            URL url = new URL(App.API_URI + "java-api/auth/subscribe");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/json");
@@ -60,7 +59,7 @@ public class SessionRequest {
 
     static public String SessionConnection(String email, String password) {
         try {
-            URL url = new URL(API_URI + "java-api/auth/login");
+            URL url = new URL(App.API_URI + "java-api/auth/login");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/json");
@@ -105,7 +104,7 @@ public class SessionRequest {
 
     static public void SessionDisconnection(Session session) {
         try {
-            URL url = new URL(API_URI + "java-api/auth/logout?token=" + session.getToken());
+            URL url = new URL(App.API_URI + "java-api/auth/logout?token=" + session.getToken());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());

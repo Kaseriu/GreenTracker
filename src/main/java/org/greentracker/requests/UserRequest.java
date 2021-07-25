@@ -1,6 +1,7 @@
 package org.greentracker.requests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.greentracker.App;
 import org.greentracker.models.Session;
 
 import java.io.BufferedReader;
@@ -9,12 +10,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
-import static org.greentracker.App.API_URI;
-
 public class UserRequest {
     static public String GetUserById(Session session) {
         try {
-            URL url = new URL(API_URI + "java-api/user/" + session.getUserId());
+            URL url = new URL(App.API_URI + "java-api/user/" + session.getUserId());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -45,7 +44,7 @@ public class UserRequest {
 
     static public String GetUserName(Session session, Integer user) {
         try {
-            URL url = new URL(API_URI + "java-api/user/" + user);
+            URL url = new URL(App.API_URI + "java-api/user/" + user);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());

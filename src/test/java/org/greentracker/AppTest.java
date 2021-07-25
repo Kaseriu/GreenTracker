@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Unit org.greentracker.test for simple App.
+ * Unit test for simple App.
  */
 public class AppTest 
 {

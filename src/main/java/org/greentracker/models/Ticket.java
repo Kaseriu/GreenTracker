@@ -28,6 +28,10 @@ public class Ticket {
         return id_state;
     }
 
+    public String getIdStateName(Session session) {
+        return StateRequest.GetStateName(session, this.id_state);
+    }
+
     public String toString(Session session) throws Exception {
         return "Informations du Ticket :" +
                 "\nId : " + this.id +

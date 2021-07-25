@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.greentracker.scene.controllers.stateControllers.ModifyStateController">
+    <Text fx:id="title" layoutX="404.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GreenTracker"
+          textAlignment="CENTER">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Text>
+    <Text fx:id="stateToUpdateNameText" layoutX="395.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Nom de l'état à modifier">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="stateToUpdateNameTextField" layoutX="398.0" layoutY="225.0"/>
+    <Button fx:id="validateStateToUpdateNameButton" layoutX="440.0" layoutY="277.0" mnemonicParsing="false"
+            onAction="#validateStateToUpdateName" text="Valider">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Text fx:id="stateNameText" layoutX="426.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Nom de l'état" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="stateNameTextField" layoutX="396.0" layoutY="236.0" visible="false"/>
+    <Button fx:id="validateButton" layoutX="437.0" layoutY="289.0" mnemonicParsing="false" onAction="#validate"
+            text="Valider" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Text fx:id="validateText" layoutX="416.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Etat modifier" textAlignment="CENTER" visible="false" wrappingWidth="106.2939453125">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow"
+            text="Retour">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+</AnchorPane>

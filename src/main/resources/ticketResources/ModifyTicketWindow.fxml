@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.greentracker.scene.controllers.ticketControllers.ModifyTicketController">
+    <Text fx:id="title" layoutX="404.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GreenTracker"
+          textAlignment="CENTER">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Text>
+    <Text fx:id="ticketToUpdateNameText" layoutX="394.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Nom du ticket à modifier">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="ticketToUpdateNameTextField" layoutX="397.0" layoutY="227.0"/>
+    <Button fx:id="validateTicketToUpdateNameButton" layoutX="439.0" layoutY="279.0" mnemonicParsing="false"
+            onAction="#validateTicketToUpdateName" text="Valider">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Text fx:id="ticketNameText" layoutX="428.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Nom du ticket" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="ticketNameTextField" layoutX="398.0" layoutY="136.0" visible="false"/>
+    <Text fx:id="descriptionText" layoutX="438.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Description" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="descriptionTextField" layoutX="399.0" layoutY="206.0" visible="false"/>
+    <Text fx:id="assignedToText" layoutX="442.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Assigner à" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="assignedToTextField" layoutX="398.0" layoutY="277.0" visible="false"/>
+    <Text fx:id="stateText" layoutX="460.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat"
+          visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="stateTextField" layoutX="399.0" layoutY="346.0" visible="false"/>
+    <Button fx:id="validateButton" layoutX="440.0" layoutY="398.0" mnemonicParsing="false" onAction="#validate"
+            text="Valider" visible="false">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Text fx:id="validateText" layoutX="419.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Ticket modifier" textAlignment="CENTER" visible="false" wrappingWidth="106.2939453125">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow"
+            text="Retour">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+</AnchorPane>

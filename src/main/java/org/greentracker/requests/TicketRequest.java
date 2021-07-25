@@ -1,5 +1,6 @@
 package org.greentracker.requests;
 
+import org.greentracker.App;
 import org.greentracker.builders.StateBuilder;
 import org.greentracker.models.Session;
 import org.greentracker.models.User;
@@ -12,12 +13,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-import static org.greentracker.App.API_URI;
-
 public class TicketRequest {
     static public String getAllTickets(Session session) {
         try {
-            URL url = new URL(API_URI + "java-api/ticket");
+            URL url = new URL(App.API_URI + "java-api/ticket");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
             connection.setRequestProperty("Content-Type", "application/json");
@@ -41,7 +40,7 @@ public class TicketRequest {
 
     static public String getUserTickets(Session session, User user) {
         try {
-            URL url = new URL(API_URI + "java-api/ticket/user/" + user.getId());
+            URL url = new URL(App.API_URI + "java-api/ticket/user/" + user.getId());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
             connection.setRequestProperty("Content-Type", "application/json");
@@ -66,7 +65,7 @@ public class TicketRequest {
     static public String getTicketByName(Session session, String name) {
         try {
             if (!name.isEmpty()) {
-                URL url = new URL(API_URI + "java-api/ticket/" + name);
+                URL url = new URL(App.API_URI + "java-api/ticket/" + name);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -97,7 +96,7 @@ public class TicketRequest {
 
     static public void createTicket(Session session, User user, String[] ticketInfo) {
         try {
-            URL url = new URL(API_URI + "java-api/ticket/add");
+            URL url = new URL(App.API_URI + "java-api/ticket/add");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -135,7 +134,7 @@ public class TicketRequest {
 
     static public void updateTicket(Session session, String ticketName, String[] ticketInfo) {
         try {
-            URL url = new URL(API_URI + "java-api/ticket/" + ticketName);
+            URL url = new URL(App.API_URI + "java-api/ticket/" + ticketName);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
@@ -180,7 +179,7 @@ public class TicketRequest {
 
     static public void deleteTicket(Session session, String name) {
         try {
-            URL url = new URL(API_URI + "java-api/ticket/" + name);
+            URL url = new URL(App.API_URI + "java-api/ticket/" + name);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Authorization", "Bearer " + session.getToken());
