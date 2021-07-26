@@ -5,36 +5,32 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.greentracker.scene.controllers.stateControllers.DeleteStateController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="372.0" layoutY="14.0" pickOnBounds="true"
-               preserveRatio="true">
-        <Image url="@../logo.png"/>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.greentracker.scene.controllers.stateControllers.DeleteStateController">
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="372.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../logo.png" />
     </ImageView>
-    <Text fx:id="stateToDeleteNameText" layoutX="390.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="Nom de l'état à supprimer">
+    <Text fx:id="stateToDeleteNameText" layoutX="390.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de l'état à supprimer">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Text>
-    <TextField fx:id="stateToDeleteNameTextField" layoutX="400.0" layoutY="216.0"/>
-    <Button fx:id="validateButton" layoutX="442.0" layoutY="268.0" mnemonicParsing="false" onAction="#validateButton"
-            text="Valider">
+    <TextField fx:id="stateToDeleteNameTextField" layoutX="400.0" layoutY="216.0" />
+    <Button fx:id="validateButton" layoutX="442.0" layoutY="268.0" mnemonicParsing="false" onAction="#validateButton" text="Valider">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Text fx:id="validateText" layoutX="420.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="Etat supprimer" textAlignment="CENTER" visible="false" wrappingWidth="106.2939453125">
+    <Text fx:id="validateText" layoutX="420.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat supprimer" textAlignment="CENTER" visible="false" wrappingWidth="106.2939453125">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Text>
-    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow"
-            text="Retour">
+    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow" text="Retour">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
 </AnchorPane>

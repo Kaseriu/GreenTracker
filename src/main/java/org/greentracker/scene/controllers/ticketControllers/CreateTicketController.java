@@ -73,7 +73,8 @@ public class CreateTicketController {
         newTicketInfo[1] = this.descriptionTextField.getText();
         newTicketInfo[2] = this.assignedToTextField.getText();
 
-        TicketRequest.createTicket(this.session, this.user, newTicketInfo);
+        String response = TicketRequest.createTicket(this.session, this.user, newTicketInfo);
         validateText.setVisible(true);
+        validateText.setText(response);
     }
 }

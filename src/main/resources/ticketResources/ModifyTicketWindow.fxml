@@ -7,59 +7,59 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.greentracker.scene.controllers.ticketControllers.ModifyTicketController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="369.0" layoutY="14.0" pickOnBounds="true"
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="369.0" pickOnBounds="true"
                preserveRatio="true">
         <Image url="@../logo.png"/>
     </ImageView>
-    <Text fx:id="ticketToUpdateNameText" layoutX="394.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0"
+    <Text fx:id="ticketToUpdateNameText" layoutX="392.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="Nom du ticket à modifier">
         <font>
             <Font size="14.0"/>
         </font>
     </Text>
-    <TextField fx:id="ticketToUpdateNameTextField" layoutX="397.0" layoutY="227.0"/>
-    <Button fx:id="validateTicketToUpdateNameButton" layoutX="439.0" layoutY="279.0" mnemonicParsing="false"
+    <TextField fx:id="ticketToUpdateNameTextField" layoutX="395.0" layoutY="254.0"/>
+    <Button fx:id="validateTicketToUpdateNameButton" layoutX="437.0" layoutY="306.0" mnemonicParsing="false"
             onAction="#validateTicketToUpdateName" text="Valider">
         <font>
             <Font size="14.0"/>
         </font>
     </Button>
-    <Text fx:id="ticketNameText" layoutX="428.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0"
+    <Text fx:id="ticketNameText" layoutX="426.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="Nom du ticket" visible="false">
         <font>
             <Font size="14.0"/>
         </font>
     </Text>
-    <TextField fx:id="ticketNameTextField" layoutX="398.0" layoutY="136.0" visible="false"/>
-    <Text fx:id="descriptionText" layoutX="438.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0"
+    <TextField fx:id="ticketNameTextField" layoutX="396.0" layoutY="154.0" visible="false"/>
+    <Text fx:id="descriptionText" layoutX="436.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="Description" visible="false">
         <font>
             <Font size="14.0"/>
         </font>
     </Text>
-    <TextField fx:id="descriptionTextField" layoutX="399.0" layoutY="206.0" visible="false"/>
-    <Text fx:id="assignedToText" layoutX="442.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0"
+    <TextField fx:id="descriptionTextField" layoutX="397.0" layoutY="224.0" visible="false"/>
+    <Text fx:id="assignedToText" layoutX="440.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="Assigner à" visible="false">
         <font>
             <Font size="14.0"/>
         </font>
     </Text>
-    <TextField fx:id="assignedToTextField" layoutX="398.0" layoutY="277.0" visible="false"/>
-    <Text fx:id="stateText" layoutX="460.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat"
+    <TextField fx:id="assignedToTextField" layoutX="396.0" layoutY="295.0" visible="false"/>
+    <Text fx:id="stateText" layoutX="458.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat"
           visible="false">
         <font>
             <Font size="14.0"/>
         </font>
     </Text>
-    <TextField fx:id="stateTextField" layoutX="399.0" layoutY="346.0" visible="false"/>
-    <Button fx:id="validateButton" layoutX="440.0" layoutY="398.0" mnemonicParsing="false" onAction="#validate"
+    <TextField fx:id="stateTextField" layoutX="397.0" layoutY="364.0" visible="false"/>
+    <Button fx:id="validateButton" layoutX="438.0" layoutY="416.0" mnemonicParsing="false" onAction="#validate"
             text="Valider" visible="false">
         <font>
             <Font size="14.0"/>
         </font>
     </Button>
-    <Text fx:id="validateText" layoutX="419.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="Ticket modifier" textAlignment="CENTER" visible="false" wrappingWidth="106.2939453125">
+    <Text fx:id="validateText" layoutX="125.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          textAlignment="CENTER" visible="false" wrappingWidth="688.6939086914062">
         <font>
             <Font size="14.0"/>
         </font>

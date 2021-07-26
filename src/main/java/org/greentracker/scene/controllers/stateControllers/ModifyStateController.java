@@ -69,13 +69,18 @@ public class ModifyStateController {
     }
 
     public void validate() {
-        StateBuilder stateToUpdateBuilder =
-                new StateBuilder(StateRequest.getStateByName(this.session, this.stateToUpdateNameTextField.getText()));
+        if (!this.stateNameTextField.getText().isEmpty()) {
 
-        StateRequest.updateState(
-                session, stateToUpdateBuilder.getStateList().get(0).getName(), this.stateNameTextField.getText());
+            StateBuilder stateToUpdateBuilder =
+                    new StateBuilder(StateRequest.getStateByName(this.session, this.stateToUpdateNameTextField.getText()));
 
-        this.validateText.setVisible(true);
+            StateRequest.updateState(
+                    session, stateToUpdateBuilder.getStateList().get(0).getName(), this.stateNameTextField.getText());
+
+            this.validateText.setVisible(true);
+        } else {
+            this.stateNameTextField.setPromptText("Entrer un nom");
+        }
     }
 
     public void switchToMenuWindow(ActionEvent actionEvent) throws IOException {

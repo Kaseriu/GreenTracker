@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.greentracker.scene.controllers.stateControllers.ModifyStateController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="370.0" layoutY="14.0" pickOnBounds="true"
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="372.0" pickOnBounds="true"
                preserveRatio="true">
         <Image url="@../logo.png"/>
     </ImageView>

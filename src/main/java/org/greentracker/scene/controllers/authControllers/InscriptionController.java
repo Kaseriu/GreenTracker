@@ -1,6 +1,7 @@
 package org.greentracker.scene.controllers.authControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -22,15 +23,26 @@ import java.util.Objects;
 
 public class InscriptionController {
 
-    public ImageView imageView;
-    public Text nameText;
-    public Text emailText;
-    public Text passwordText;
-    public TextField nameTextField;
-    public TextField emailTextField;
-    public PasswordField passwordField;
-    public Button validateButton;
-    public Button returnButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text nameText;
+    @FXML
+    private Text emailText;
+    @FXML
+    private Text passwordText;
+    @FXML
+    private TextField nameTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Text validateText;
+    @FXML
+    private Button returnButton;
 
     private Stage stage;
     private Scene scene;
@@ -53,7 +65,7 @@ public class InscriptionController {
 
         String userSubscription = SessionRequest.UserSubscription(userInfo);
 
-        if (userSubscription != null) {
+        if (!userSubscription.contains("Error :")) {
             String[] userAndSessionInfo = userSubscription.split("},");
             UserBuilder userBuilder = new UserBuilder(userAndSessionInfo[0].replace("{\"user\":{", ""));
             SessionBuilder sessionBuilder = new SessionBuilder(userAndSessionInfo[1].replace("\"session\":{", ""));
@@ -69,6 +81,9 @@ public class InscriptionController {
             this.scene = new Scene(menuWindow);
             this.stage.setScene(this.scene);
             this.stage.show();
+        } else {
+            this.validateText.setVisible(true);
+            this.validateText.setText(userSubscription.replace("Error :", ""));
         }
     }
 }

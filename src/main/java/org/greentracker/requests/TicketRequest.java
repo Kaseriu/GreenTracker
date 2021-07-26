@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public class TicketRequest {
     static public String getAllTickets(Session session) {
@@ -94,7 +95,7 @@ public class TicketRequest {
         }
     }
 
-    static public void createTicket(Session session, User user, String[] ticketInfo) {
+    static public String createTicket(Session session, User user, String[] ticketInfo) {
         try {
             URL url = new URL(App.API_URI + "java-api/ticket/add");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -115,7 +116,15 @@ public class TicketRequest {
             outputStreamWriter.close();
 
             if (connection.getResponseCode() == 201) {
-                System.out.println("Ticket créé");
+                StringBuilder sb = new StringBuilder();
+                BufferedReader br = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line).append("\n");
+                }
+                br.close();
+                return sb.toString();
             } else {
                 StringBuilder sb = new StringBuilder();
                 BufferedReader br = new BufferedReader(
@@ -125,14 +134,14 @@ public class TicketRequest {
                     sb.append(line).append("\n");
                 }
                 br.close();
-                System.out.print(sb);
+                return sb.toString();
             }
         } catch (Exception exception) {
-            System.out.println("API injoignable !");
+            return "API injoignable !";
         }
     }
 
-    static public void updateTicket(Session session, String ticketName, String[] ticketInfo) {
+    static public String updateTicket(Session session, String ticketName, String[] ticketInfo) {
         try {
             URL url = new URL(App.API_URI + "java-api/ticket/" + ticketName);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -160,7 +169,15 @@ public class TicketRequest {
             outputStreamWriter.close();
 
             if (connection.getResponseCode() == 200) {
-                System.out.println("Ticket modifié");
+                StringBuilder sb = new StringBuilder();
+                BufferedReader br = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line).append("\n");
+                }
+                br.close();
+                return sb.toString();
             } else {
                 StringBuilder sb = new StringBuilder();
                 BufferedReader br = new BufferedReader(
@@ -170,10 +187,11 @@ public class TicketRequest {
                     sb.append(line).append("\n");
                 }
                 br.close();
-                System.out.print(sb);
+                return sb.toString();
             }
         } catch (Exception exception) {
-            System.out.println("API injoignable !");
+            exception.printStackTrace();
+            return "API injoignable !";
         }
     }
 

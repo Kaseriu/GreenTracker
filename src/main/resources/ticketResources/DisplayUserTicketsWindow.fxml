@@ -6,18 +6,18 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.greentracker.scene.controllers.ticketControllers.DisplayUserTicketsController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="370.0" layoutY="14.0" pickOnBounds="true"
-               preserveRatio="true">
-        <Image url="@../logo.png"/>
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.greentracker.scene.controllers.ticketControllers.DisplayUserTicketsController">
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="369.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../logo.png" />
     </ImageView>
-    <TextArea fx:id="ticketsTextArea" editable="false" layoutX="327.0" layoutY="157.0" prefHeight="278.0"
-              prefWidth="286.0"/>
-    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow"
-            text="Retour">
+    <TextArea fx:id="ticketsTextArea" editable="false" layoutX="327.0" layoutY="157.0" prefHeight="278.0" prefWidth="286.0">
+      <font>
+         <Font size="14.0" />
+      </font></TextArea>
+    <Button fx:id="returnButton" layoutX="441.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMenuWindow" text="Retour">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
 </AnchorPane>

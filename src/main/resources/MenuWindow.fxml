@@ -1,74 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.greentracker.scene.controllers.MenuController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="379.0" layoutY="14.0" pickOnBounds="true"
-               preserveRatio="true">
-        <Image url="@logo.png"/>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.greentracker.scene.controllers.MenuController">
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="379.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@logo.png" />
     </ImageView>
-    <Button fx:id="ticketsButton" layoutX="318.0" layoutY="170.0" mnemonicParsing="false"
-            onAction="#switchToDisplayAllTickets" prefHeight="30.0" prefWidth="122.0" text="Tickets">
+    <Button fx:id="ticketsButton" layoutX="318.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToDisplayAllTickets" prefHeight="30.0" prefWidth="122.0" text="Tickets">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="myTicketsButton" layoutX="519.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToDisplayUserTickets"
-            prefHeight="30.0" prefWidth="122.0" text="Mes tickets">
+    <Button fx:id="myTicketsButton" layoutX="519.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToDisplayUserTickets" prefHeight="30.0" prefWidth="122.0" text="Mes tickets">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="infoTicketButton" layoutX="318.0" layoutY="230.0" mnemonicParsing="false"
-            onAction="#switchToDisplayTicketInfo" prefHeight="30.0" prefWidth="122.0" text="Infos Ticket">
+    <Button fx:id="infoTicketButton" layoutX="318.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToDisplayTicketInfo" prefHeight="30.0" prefWidth="122.0" text="Infos Ticket">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="createTicketButton" layoutX="519.0" layoutY="230.0" mnemonicParsing="false"
-            onAction="#switchToCreateTicketWindow" prefHeight="30.0" prefWidth="122.0" text="Créer ticket">
+    <Button fx:id="createTicketButton" layoutX="519.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToCreateTicketWindow" prefHeight="30.0" prefWidth="122.0" text="Créer ticket">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="modifyTicketButton" layoutX="318.0" layoutY="289.0" mnemonicParsing="false"
-            onAction="#switchToModifyTicketWindow" prefHeight="30.0" prefWidth="122.0" text="Modifier ticket">
+    <Button fx:id="modifyTicketButton" layoutX="318.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchToModifyTicketWindow" prefHeight="30.0" prefWidth="122.0" text="Modifier ticket">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="deleteTicketButton" layoutX="519.0" layoutY="289.0" mnemonicParsing="false"
-            onAction="#switchToDeleteTicketWindow" text="Supprimer ticket">
+    <Button fx:id="deleteTicketButton" layoutX="519.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchToDeleteTicketWindow" text="Supprimer ticket">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="createStateButton" layoutX="318.0" layoutY="349.0" mnemonicParsing="false"
-            onAction="#switchToCreateStateWindow" prefHeight="30.0" prefWidth="122.0" text="Créer state">
+    <Button fx:id="createStateButton" layoutX="318.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToCreateStateWindow" prefHeight="30.0" prefWidth="122.0" text="Créer state">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="modifyStateButton" layoutX="519.0" layoutY="349.0" mnemonicParsing="false"
-            onAction="#switchToModifyStateWindow" prefHeight="30.0" prefWidth="122.0" text="Modifier state">
+    <Button fx:id="modifyStateButton" layoutX="519.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToModifyStateWindow" prefHeight="30.0" prefWidth="122.0" text="Modifier state">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="deleteStateButton" layoutX="418.0" layoutY="409.0" mnemonicParsing="false"
-            onAction="#switchToDeleteStateWindow" prefHeight="30.0" prefWidth="122.0" text="Supprimer state">
+    <Button fx:id="deleteStateButton" layoutX="418.0" layoutY="409.0" mnemonicParsing="false" onAction="#switchToDeleteStateWindow" prefHeight="30.0" prefWidth="122.0" text="Supprimer state">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="disconnectButton" layoutX="419.0" layoutY="495.0" mnemonicParsing="false"
-            onAction="#switchToMainWindow" prefHeight="30.0" prefWidth="122.0" text="Déconnexion">
+    <Button fx:id="disconnectButton" layoutX="419.0" layoutY="495.0" mnemonicParsing="false" onAction="#switchToMainWindow" prefHeight="30.0" prefWidth="122.0" text="Déconnexion">
         <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
         </font>
     </Button>
 </AnchorPane>

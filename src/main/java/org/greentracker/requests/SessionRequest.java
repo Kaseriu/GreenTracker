@@ -48,12 +48,10 @@ public class SessionRequest {
                     sb.append(line).append("\n");
                 }
                 br.close();
-                System.out.print(sb);
-                return null;
+                return "Error :" + sb;
             }
         } catch (Exception exception) {
-            System.out.println("API injoignable !");
-            return null;
+            return "Error :" + "API injoignable !";
         }
     }
 

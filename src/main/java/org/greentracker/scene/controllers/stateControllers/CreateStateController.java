@@ -46,8 +46,12 @@ public class CreateStateController {
     }
 
     public void validate() {
-        StateRequest.createState(this.session, this.stateNameTextField.getText());
-        validateText.setVisible(true);
+        if (!this.stateNameTextField.getText().equals("")) {
+            StateRequest.createState(this.session, this.stateNameTextField.getText());
+            validateText.setVisible(true);
+        } else {
+            this.stateNameTextField.setPromptText("Entrer un nom");
+        }
     }
 
     public void switchToMenuWindow(ActionEvent actionEvent) throws IOException {

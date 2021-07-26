@@ -95,10 +95,18 @@ public class ModifyTicketController {
         updateTicketInfo[2] = this.assignedToTextField.getText();
         updateTicketInfo[3] = this.stateTextField.getText();
 
-        TicketRequest.updateTicket(
-                session, ticketToUpdateBuilder.getTicketList().get(0).getName(), updateTicketInfo);
+        if (!(updateTicketInfo[0].isEmpty() && updateTicketInfo[1].isEmpty()
+                && updateTicketInfo[2].isEmpty() && updateTicketInfo[3].isEmpty())) {
 
-        this.validateText.setVisible(true);
+            String response = TicketRequest.updateTicket(
+                    session, ticketToUpdateBuilder.getTicketList().get(0).getName(), updateTicketInfo);
+
+            this.validateText.setVisible(true);
+            this.validateText.setText(response);
+        } else {
+            this.validateText.setVisible(true);
+            this.validateText.setText("Vous devez au moins renseigner un champs");
+        }
     }
 
     public void switchToMenuWindow(ActionEvent actionEvent) throws IOException {

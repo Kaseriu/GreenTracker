@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.greentracker.scene.controllers.ticketControllers.CreateTicketController">
-    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="372.0" layoutY="14.0" pickOnBounds="true"
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="372.0" pickOnBounds="true"
                preserveRatio="true">
         <Image url="@../logo.png"/>
     </ImageView>
@@ -38,8 +38,8 @@
             <Font size="14.0"/>
         </font>
     </Button>
-    <Text fx:id="validateText" layoutX="437.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket créé"
-          textAlignment="CENTER" visible="false" wrappingWidth="70.2939453125">
+    <Text fx:id="validateText" layoutX="237.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          textAlignment="CENTER" visible="false" wrappingWidth="469.49395751953125">
         <font>
             <Font size="14.0"/>
         </font>
