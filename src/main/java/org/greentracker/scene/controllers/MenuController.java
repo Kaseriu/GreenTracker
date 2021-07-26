@@ -77,7 +77,18 @@ public class MenuController {
         this.stage.show();
     }
 
-    public void displayMyTickets(ActionEvent actionEvent) {
+    public void switchToDisplayUserTickets(ActionEvent actionEvent) throws IOException {
+        String resourcesPath = Objects.requireNonNull(getClass().getResource("/")).toString();
+        FXMLLoader loader = new FXMLLoader(new URL(resourcesPath + "ticketResources/DisplayUserTicketsWindow.fxml"));
+        Parent displayUserTicketsWindow = loader.load();
+
+        DisplayUserTicketsController displayUserTicketsController = loader.getController();
+        displayUserTicketsController.setSessionAndUser(this.session, this.user);
+
+        this.stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        this.scene = new Scene(displayUserTicketsWindow);
+        this.stage.setScene(this.scene);
+        this.stage.show();
     }
 
     public void switchToDisplayTicketInfo(ActionEvent actionEvent) throws IOException {
