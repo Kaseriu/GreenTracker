@@ -1,6 +1,7 @@
 package org.greentracker.scene.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -15,10 +16,14 @@ import java.util.Objects;
 
 public class MainController {
 
-    public ImageView imageView;
-    public Button inscriptionButton;
-    public Button quitButton;
-    public Button connectionButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Button inscriptionButton;
+    @FXML
+    private Button quitButton;
+    @FXML
+    private Button connectionButton;
 
     private Stage stage;
     private Scene scene;

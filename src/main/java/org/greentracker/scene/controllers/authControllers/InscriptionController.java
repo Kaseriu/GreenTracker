@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.builders.SessionBuilder;
@@ -21,7 +22,7 @@ import java.util.Objects;
 
 public class InscriptionController {
 
-    public Text title;
+    public ImageView imageView;
     public Text nameText;
     public Text emailText;
     public Text passwordText;

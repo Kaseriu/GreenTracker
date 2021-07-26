@@ -1,12 +1,14 @@
 package org.greentracker.scene.controllers.stateControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.builders.StateBuilder;
@@ -21,15 +23,24 @@ import java.util.Objects;
 
 public class ModifyStateController {
 
-    public Text title;
-    public Text stateToUpdateNameText;
-    public TextField stateToUpdateNameTextField;
-    public Button validateStateToUpdateNameButton;
-    public Text stateNameText;
-    public TextField stateNameTextField;
-    public Button validateButton;
-    public Text validateText;
-    public Button returnButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text stateToUpdateNameText;
+    @FXML
+    private TextField stateToUpdateNameTextField;
+    @FXML
+    private Button validateStateToUpdateNameButton;
+    @FXML
+    private Text stateNameText;
+    @FXML
+    private TextField stateNameTextField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Text validateText;
+    @FXML
+    private Button returnButton;
 
     private Session session;
     private User user;

@@ -1,6 +1,7 @@
 package org.greentracker.scene.controllers.authControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -23,14 +24,22 @@ import java.util.Objects;
 
 public class ConnectionController {
 
-    public ImageView imageView;
-    public Text emailText;
-    public TextField emailTextField;
-    public Text passwordText;
-    public PasswordField passwordField;
-    public Button validateButton;
-    public Text errorText;
-    public Button returnButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text emailText;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private Text passwordText;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Text errorText;
+    @FXML
+    private Button returnButton;
 
     private Stage stage;
     private Scene scene;

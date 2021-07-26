@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.greentracker.scene.controllers.authControllers.InscriptionController">
-    <Text fx:id="title" layoutX="410.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GreenTracker"
-          textAlignment="CENTER">
-        <font>
-            <Font size="24.0"/>
-        </font>
-    </Text>
+    <ImageView fx:id="imageView" fitHeight="107.0" fitWidth="229.0" layoutX="380.0" layoutY="14.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../logo.png"/>
+    </ImageView>
     <Text fx:id="nameText" layoutX="465.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
         <font>
             <Font size="14.0"/>
@@ -36,7 +36,7 @@
             <Font size="14.0"/>
         </font>
     </Button>
-    <Button fx:id="returnButton" layoutX="450.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMainWindow"
+    <Button fx:id="returnButton" layoutX="449.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToMainWindow"
             text="Retour">
         <font>
             <Font size="14.0"/>

@@ -1,6 +1,7 @@
 package org.greentracker.scene.controllers.ticketControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.builders.TicketBuilder;
@@ -22,13 +24,18 @@ import java.util.Objects;
 
 public class DisplayTicketInfoController {
 
-
-    public Text title;
-    public Text ticketNameText;
-    public TextField ticketNameTextField;
-    public Button validateButton;
-    public TextArea ticketTextArea;
-    public Button returnButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text ticketNameText;
+    @FXML
+    private TextField ticketNameTextField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private TextArea ticketTextArea;
+    @FXML
+    private Button returnButton;
 
     private Session session;
     private User user;

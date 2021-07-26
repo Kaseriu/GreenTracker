@@ -1,12 +1,14 @@
 package org.greentracker.scene.controllers.ticketControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.builders.TicketBuilder;
@@ -20,21 +22,37 @@ import java.net.URL;
 import java.util.Objects;
 
 public class ModifyTicketController {
-    public Text title;
-    public Text ticketToUpdateNameText;
-    public TextField ticketToUpdateNameTextField;
-    public Button validateTicketToUpdateNameButton;
-    public Text ticketNameText;
-    public TextField ticketNameTextField;
-    public Text descriptionText;
-    public TextField descriptionTextField;
-    public Text assignedToText;
-    public TextField assignedToTextField;
-    public Text stateText;
-    public TextField stateTextField;
-    public Button validateButton;
-    public Text validateText;
-    public Button returnButton;
+
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text ticketToUpdateNameText;
+    @FXML
+    private TextField ticketToUpdateNameTextField;
+    @FXML
+    private Button validateTicketToUpdateNameButton;
+    @FXML
+    private Text ticketNameText;
+    @FXML
+    private TextField ticketNameTextField;
+    @FXML
+    private Text descriptionText;
+    @FXML
+    private TextField descriptionTextField;
+    @FXML
+    private Text assignedToText;
+    @FXML
+    private TextField assignedToTextField;
+    @FXML
+    private Text stateText;
+    @FXML
+    private TextField stateTextField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Text validateText;
+    @FXML
+    private Button returnButton;
 
     private Session session;
     private User user;

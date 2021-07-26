@@ -1,12 +1,14 @@
 package org.greentracker.scene.controllers.stateControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.models.Session;
@@ -20,11 +22,16 @@ import java.util.Objects;
 
 public class DeleteStateController {
 
-    public Text title;
-    public Text stateToDeleteNameText;
-    public TextField stateToDeleteNameTextField;
-    public Text validateText;
-    public Button returnButton;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text stateToDeleteNameText;
+    @FXML
+    private TextField stateToDeleteNameTextField;
+    @FXML
+    private Text validateText;
+    @FXML
+    private Button returnButton;
 
     private Session session;
     private User user;

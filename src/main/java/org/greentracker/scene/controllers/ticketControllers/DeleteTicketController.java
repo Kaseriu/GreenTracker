@@ -1,6 +1,7 @@
 package org.greentracker.scene.controllers.ticketControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.models.Session;
@@ -20,12 +22,19 @@ import java.net.URL;
 import java.util.Objects;
 
 public class DeleteTicketController {
-    public Text title;
-    public Text ticketToDeleteNameText;
-    public TextField ticketToDeleteNameTextField;
-    public Button validateButton;
-    public Text validateText;
-    public Button returnButton;
+
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Text ticketToDeleteNameText;
+    @FXML
+    private TextField ticketToDeleteNameTextField;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Text validateText;
+    @FXML
+    private Button returnButton;
 
     private Session session;
     private User user;

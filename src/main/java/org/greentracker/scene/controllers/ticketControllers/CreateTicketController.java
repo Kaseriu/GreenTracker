@@ -1,12 +1,14 @@
 package org.greentracker.scene.controllers.ticketControllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.greentracker.models.Session;
@@ -19,16 +21,27 @@ import java.net.URL;
 import java.util.Objects;
 
 public class CreateTicketController {
-    public Text title;
-    public Button validateButton;
-    public Button returnButton;
-    public Text ticketNameText;
-    public Text descriptionText;
-    public Text assignedToText;
-    public Text validateText;
-    public TextField ticketNameTextField;
-    public TextField descriptionTextField;
-    public TextField assignedToTextField;
+
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Button validateButton;
+    @FXML
+    private Button returnButton;
+    @FXML
+    private Text ticketNameText;
+    @FXML
+    private Text descriptionText;
+    @FXML
+    private Text assignedToText;
+    @FXML
+    private Text validateText;
+    @FXML
+    private TextField ticketNameTextField;
+    @FXML
+    private TextField descriptionTextField;
+    @FXML
+    private TextField assignedToTextField;
 
     private Session session;
     private User user;
